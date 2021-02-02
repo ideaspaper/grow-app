@@ -9,10 +9,15 @@ module.exports = {
   },
   "test": {},
   "production": {
-    "username": "khvicsslpzpjxg",
-    "password": "c9f08aded4b8f58ae6a1d771544ca3e1ca3d2152795280bc5c068741df0a073e",
-    "database": "ddhelnlv5ajlhu",
-    "host": "ec2-54-172-17-119.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "username": process.env.DB_USER_PROD,
+    "password": process.env.DB_PASS_PROD,
+    "database": process.env.DB_DATABASE_PROD,
+    "host": process.env.DB_HOST_PROD,
+    "dialect": "postgres",
+    "dialectOptions": {
+      ssl: {
+        rejectUnauthorized: false
+      }
+    }
   }
 }
