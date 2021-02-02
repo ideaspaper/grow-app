@@ -26,8 +26,12 @@ class PostsController {
       include: [User]
     })
       .then((data) => {
-        req.session.pageAt = 'read';
-        res.render('read', { data: data, sess: req.session });
+        if (data) {
+          req.session.pageAt = 'read';
+          res.render('read', { data: data, sess: req.session });
+        } else {
+          throw 'No data';
+        }
       })
       .catch((err) => {
         req.session.pageAt = 'error';
