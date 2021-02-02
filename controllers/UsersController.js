@@ -24,20 +24,21 @@ class UserController {
           const errorMessages = validationErrorMessages(err);
           res.redirect(`/user/register?errorMessages=${errorMessages.join()}`);
         } catch {
-          res.render('error');
+          req.session.pageAt = 'error';
+          res.render('error', { sess: req.session });
         }
       });
   }
 
   // Edit
   static getEdit(req, res) {
-    req.session.pageAt = 'userEdit'
     User.findOne({
       where: {
         id: req.session.userid
       }
     })
       .then((data) => {
+        req.session.pageAt = 'userEdit';
         res.render('userEdit', { errorMessages: req.query.errorMessages, data: data, sess: req.session });
       });
   }
@@ -59,7 +60,8 @@ class UserController {
           const errorMessages = validationErrorMessages(err);
           res.redirect(`/user/edit?errorMessages=${errorMessages.join()}`);
         } catch {
-          res.render('error');
+          req.session.pageAt = 'error';
+          res.render('error', { sess: req.session });
         }
       });
   }
@@ -94,6 +96,8 @@ class UserController {
             },
             include: [Menu]
           });
+        } else {
+          res.redirect('login?errorMessages=Wrong username/password');
         }
       })
       .then((data) => {
@@ -103,7 +107,7 @@ class UserController {
         res.redirect('/');
       })
       .catch((err) => {
-        console.log(err);
+        res.render('error', { sess: req.session });
       });
   }
 

@@ -9,14 +9,16 @@ class PostsController {
       }
     })
       .then((data) => {
+        req.session.pageAt = 'posts';
         res.render('posts', { posts: data, sess: req.session });
       })
       .catch((err) => {
-        res.send(err);
+        req.session.pageAt = 'error';
+        res.render('error', { sess: req.session });
       });
   }
+
   static findOneRead(req, res) {
-    req.session.pageAt = 'read'
     Post.findOne({
       where: {
         id: req.params.id
@@ -24,10 +26,12 @@ class PostsController {
       include: [User]
     })
       .then((data) => {
+        req.session.pageAt = 'read';
         res.render('read', { data: data, sess: req.session });
       })
       .catch((err) => {
-        res.render('error');
+        req.session.pageAt = 'error';
+        res.render('error', { sess: req.session });
       });
   }
 }

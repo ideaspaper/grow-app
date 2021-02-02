@@ -4,7 +4,7 @@ const usersRouter = require('./usersRouter');
 const postsRouter = require('./postsRouter');
 const writeRouter = require('./writeRouter');
 const readRouter = require('./readRouter');
-const { Post } = require('./../models');
+const { Post, User } = require('./../models');
 
 router.use('/user', usersRouter);
 router.use('/posts', postsRouter);

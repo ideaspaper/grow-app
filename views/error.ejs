@@ -3,6 +3,15 @@
   <%- include('components/head', { title: 'Home' }) %>
   <body>
     <%- include('components/navbar', { sess: sess }) %>
-    <p class="display-3">Oops... Something wrong happended!</p>
+    <div class="jumbotron">
+      <h1 class="display-4">Oops.. something wrong happened...</h1>
+      <p class="lead">Nothing can be done for now.</p>
+      <hr class="my-4">
+      <p>Click button below to return to home page.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/" role="button">Home page</a>
+      </p>
+    </div>
+    <%- include('components/bottomSpace') %>
   </body>
 </html>
