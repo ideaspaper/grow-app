@@ -1,0 +1,17 @@
+<div class="container mt-3">
+  <% posts.forEach((element) => { %>
+    <div class="row mt-2">
+      <div class="col">
+        <div class="card">
+          <!-- <img class="card-img-top" src="/assets/write.jpg" alt="Card image cap"> -->
+          <div class="card-body">
+            <h5 class="card-title"><%= element.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= element.verse %></h6>
+            <p class="card-text"><%= `${element.content.slice(0, 51)} ...` %></p>
+            <a href="/read/<%= element.id %>" class="btn btn-link">Read more...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

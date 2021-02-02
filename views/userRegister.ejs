@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('components/head', { title: 'Register' }) %>
+  <body>
+    <%- include('components/navbar', { sess: sess }) %>
+    <%- include('components/errorMessages', { errorMessages: errorMessages }) %>
+    <div class="container mt-4">
+      <img src="/assets/tree.svg" class="img-fluid border-0 mx-auto d-block" style="width: 10em">
+      <h1>Register</h1>
+      <form action="/user/register" method="POST">
+        <div class="form-group">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your last name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Your email address">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Your username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

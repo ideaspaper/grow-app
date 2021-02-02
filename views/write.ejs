@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('components/head', { title: 'Write' }) %>
+  <body>
+    <%- include('components/navbar', { sess: sess }) %>
+    <%- include('components/errorMessages', { errorMessages: errorMessages }) %>
+    <div class="container mt-3">
+      <p class="h1">Write Story</p>
+    </div>
+
+    <div class="container mt-3">
+      <form action="write" method="POST">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="e.g. Be humble">
+        </div>
+        <div class="form-group">
+          <label for="verse">Verse</label>
+          <input type="text" class="form-control" id="verse" name="verse" placeholder="e.g. Paslm 1:7">
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea class="form-control" id="content" name="content" rows="8" placeholder="Write your story here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

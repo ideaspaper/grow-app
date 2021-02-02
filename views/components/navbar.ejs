@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <a class="navbar-brand" href="/" tabindex="-1"><strong>GROW</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if (typeof sess.menus !== 'undefined') { %>
+        <% sess.menus.forEach((element) => { %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/<%= element.menuName.toLowerCase() %>"><%= element.menuName %></a>
+          </li>
+        <% }) %>
+      <% } %>
+    </ul>
+
+    <% if (sess.pageAt !== 'userRegister' && sess.pageAt !== 'userEdit' && sess.pageAt !== 'login') { %>
+      <% if (!sess.userid) { %>
+        <%- include('navbarLogReg') %>
+      <% } else { %>
+        <%- include('navbarUser', { sess: sess }) %>
+      <% } %>
+    <% } %>
+    
+  </div>
+</nav>

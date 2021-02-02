@@ -1,0 +1,22 @@
+[
+  {
+    "RoleId": 1,
+    "MenuId": 1
+  },
+  {
+    "RoleId": 1,
+    "MenuId": 2
+  },
+  {
+    "RoleId": 1,
+    "MenuId": 3
+  },
+  {
+    "RoleId": 2,
+    "MenuId": 1
+  },
+  {
+    "RoleId": 2,
+    "MenuId": 2
+  }
+]

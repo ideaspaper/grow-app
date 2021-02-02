@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('components/head', { title: 'Read' }) %>
+  <body>
+    <%- include('components/navbar', { sess: sess }) %>
+    <div class="container mt-3">
+      <p class="display-4"><%= data.title %></p>
+      <h2 class="text-muted"><%= data.verse %></h2>
+      <p class="text-muted"><%= `${data.createdAt.getFullYear()}-${data.createdAt.getMonth()}-${data.createdAt.getDate()}` %></p>
+      <p class="text-muted">By: <%= `${data.User.firstName} ${data.User.lastName}` %></p>
+
+      <blockquote class="blockquote">
+        <p class="mb-0"><%= data.content %></p>
+      </blockquote>
+    </div>
+  </body>
+</html>
