@@ -45,4 +45,4 @@ $: heroku run bash
 
 ## Demo
 
-[grow-app](https://grow-sate.herokuapp.com/)
+[grow-sate](https://grow-sate.herokuapp.com/)
