@@ -1,6 +1,6 @@
 # grow-app
 
-This app is meant for 
+This simple app is meant for sharing bible verses.
 
 ## Objectives
 
@@ -45,4 +45,4 @@ $: heroku run bash
 
 ## Demo
 
-[h8-movie-app](https://h8-movie-app.herokuapp.com/)
+[grow-app](https://grow-sate.herokuapp.com/)
